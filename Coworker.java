@@ -1,6 +1,8 @@
-п»їРќР°РїРёСЃР°С‚СЊ РєР»Р°СЃСЃ РґР»СЏ РѕС‚РґРµР»Р° РєР°РґСЂРѕРІ вЂ“ РЎРѕС‚СЂСѓРґРЅРёРє  (РїРѕР»СЏ: С„Р°РјРёР»РёСЏ, РёРјСЏ, РѕС‚С‡РµСЃС‚РІРѕ, РґР°С‚Р° СЂРѕР¶РґРµРЅРёСЏ, РїРѕР», РѕР±СЂР°Р·РѕРІР°РЅРёСЏ, РЅРѕРјРµСЂ РґРѕРєСѓРјРµРЅС‚Р° РѕР± РѕР±СЂР°Р·РѕРІР°РЅРёРё, СѓС‡РµР±РЅРѕРµ Р·Р°РІРµРґРµРЅРёРµ РІС‹РґР°РІС€РµРµ РґРѕРєСѓРјРµРЅС‚, РґР°С‚Р° РїРѕСЃС‚СѓРїР»РµРЅРёСЏ РЅР° СЂР°Р±РѕС‚Сѓ, РґРѕРјР°С€РЅРёР№ Р°РґСЂРµСЃ).
+Написать класс для отдела кадров – Сотрудник  (поля: фамилия, имя, отчество, дата рождения, пол, образования, номер документа об образовании, учебное заведение выдавшее документ, дата поступления на работу, домашний адрес).
 
 public class Coworker {
+
+enum Salary { BAD, AVG, GOOD, PERFECT }
 
         private String surname;
 	private String name;
@@ -8,7 +10,7 @@ public class Coworker {
 	private String dateOfBirth;
 	private boolean sex;
 	private String education;
-	private long certificateId;
+	private int certificateId;
 	private String university
 	private String dateOfJobStart;
 	private String homeAddress;
@@ -17,4 +19,16 @@ public class Coworker {
 	// getters here
 	// setters here
 
+@Override
+	public boolean equals(Coworker c) {
+		if (this == c)
+			return true;
+		if (c == null)
+			return false;
+		
+	}
+@Override
+	public int hashCode() {
+		return certificateId;
+	}
 }
